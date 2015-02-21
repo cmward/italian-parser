@@ -455,7 +455,7 @@ parseCl = leafP "CL"
 
 parseVP :: PARSER Cat Cat 
 parseVP = finPastVpRule <|> finPresVpRule <|> finFutVpRule 
-	        <|> auxVpRule <|> clVpRule
+	      <|> auxVpRule <|> clVpRule
 
 vpRule :: PARSER Cat Cat
 vpRule = \xs -> 
@@ -469,17 +469,15 @@ match :: [Cat] -> [Cat] -> Bool
 match []     []     = True
 match _      []     = False
 match []      _     = False
-match (x:xs) (y:ys) = catLabel x == catLabel y 
-            && agree x y 
-	          && match xs ys 
+match (x:xs) (y:ys) = catLabel x == catLabel y && agree x y && match xs ys 
 
 finPastVpRule :: PARSER Cat Cat
 finPastVpRule = \xs -> [(vp',ys) | (vp,ys) <- vpRule xs, 
-	      	    					vp'    <- assignT Past vp ]
+                                    vp'    <- assignT Past vp ]
 
 finPresVpRule :: PARSER Cat Cat
 finPresVpRule = \xs -> [(vp',ys) | (vp,ys) <- vpRule xs, 
-	      	    					vp'    <- assignT Pres vp ]
+                                    vp'    <- assignT Pres vp ]
 
 
 finFutVpRule :: PARSER Cat Cat
