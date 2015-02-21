@@ -1,5 +1,3 @@
-Chris Ward, 2014
-
 Code taken from van Eijk and Unger, *Computational Semantics with Functional Programming*.
 Modified to parse Italian sentences. 
 
@@ -70,59 +68,37 @@ Italian Parser
 *Note*: while running the program in ghci,`testSents` will give you the list of test sentences, `prsTestSents` will give you a massive list of all of the sentences parsed, and `prsTestSent n` will give you the nth sentence in the test suite parsed.  
 
 *Beppe parla col mago.*
-
 Beppe speaks with the wizard.
 
-
 *Quest'uomo parlava con quella donna.*
-
 This man spoke with that woman.
 
-
 *Ho letto il giornale.*
-
 I read the newspaper.
 
-
 *L'ho letto.*
-
 I read it.
 
-
 *Ogni ragazzo leggeva il giornale.*
-
 Every boy read the newspaper. 
 
-
 *L'uomo aveva dato una spada agli gnomi.*
-
 The man gave a sword to the dwarves.
 
-
 *Li hai dati alle donne.*
-
 You gave them to the women.
-
 *Note*: when a 3rd person direct object clitic is used with the perfect, the participle must agree with the clitic, hence dati instead of data.
 
-
 *Molte persone partiranno per la campagna.*
-
 Many people will leave for the countryside.
 
-
 *Alcuni giganti parlarono.*
-
 Some giants talked.
 
-
 *Sono partito.*
-
 I left. 
 
-
 *Parlerò.*
-
 I will speak. 
 
 
