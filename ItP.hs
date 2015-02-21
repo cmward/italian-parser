@@ -475,16 +475,16 @@ match (x:xs) (y:ys) = catLabel x == catLabel y
 
 finPastVpRule :: PARSER Cat Cat
 finPastVpRule = \xs -> [(vp',ys) | (vp,ys) <- vpRule xs, 
-	      	    					            vp'    <- assignT Past vp ]
+	      	    					vp'    <- assignT Past vp ]
 
 finPresVpRule :: PARSER Cat Cat
 finPresVpRule = \xs -> [(vp',ys) | (vp,ys) <- vpRule xs, 
-	      	    					            vp'    <- assignT Pres vp ]
+	      	    					vp'    <- assignT Pres vp ]
 
 
 finFutVpRule :: PARSER Cat Cat
 finFutVpRule = \xs -> [(vp',ys) | (vp,ys) <- vpRule xs, 
-	       	   			                 vp'    <- assignT Fut vp ]
+	       	   			           vp'    <- assignT Fut vp ]
 
 -- Parse VPs with direct object clitics and auxiliaries
 clVpRule :: PARSER Cat Cat
@@ -492,14 +492,14 @@ clVpRule = \xs ->
 	[(Branch (Cat "_" "VP" (fs (t2c vp)) []) [cl',vp],zs) |
 		(cl,ys)   <- parseCl xs,
 		(vp,zs)   <- parseVP ys,
-    cl'       <- assignT Acc cl ]
+        cl'       <- assignT Acc cl ]
 
 auxVpRule :: PARSER Cat Cat
 auxVpRule = \xs -> 
  [(Branch (Cat "_" "VP" fs []) [aux,v'],zs) | 
   (aux,ys) <- parseAux xs,
   (v,zs)   <- vpRule ys, 
-  fs 	     <- combine (t2c aux) (t2c v),
+  fs 	   <- combine (t2c aux) (t2c v),
   v'       <- assignT Perf v ]
   
 prs :: String -> [ParseTree Cat Cat]
