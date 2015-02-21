@@ -301,10 +301,10 @@ type Words = [String]
 insertPro :: Words -> Words
 insertPro ws = let w = lexicon (head ws) in
 	if catLabel (head w) == "VP" || catLabel (head w) == "AUX" 
-	   || ("CL" `elem` map catLabel w && (catLabel . head . lexicon) (ws!!1) == "VP")
-     || ("CL" `elem` map catLabel w && (catLabel . head . lexicon) (ws!!1) == "AUX")
-	then "pro":ws
-	else ws
+      || ("CL" `elem` map catLabel w && (catLabel . head . lexicon) (ws!!1) == "VP")
+      || ("CL" `elem` map catLabel w && (catLabel . head . lexicon) (ws!!1) == "AUX")
+	    then "pro":ws
+	    else ws
 
 lexer :: String -> Words 
 lexer = insertPro . preproc . words . (map toLower) . scan
