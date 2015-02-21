@@ -3,6 +3,8 @@ Chris Ward, 2014
 Code taken from van Eijk and Unger, *Computational Semantics with Functional Programming*.
 Modified to parse Italian sentences. 
 
+Requires the `FPH.hs` file from the book. 
+
 Italian Parser
 ---------------
 
