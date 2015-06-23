@@ -1,3 +1,5 @@
+Project for Brandeis CS 135: Computational Semantics.
+
 Code taken from van Eijk and Unger, *Computational Semantics with Functional Programming*.
 Modified to parse Italian sentences. 
 
@@ -100,7 +102,5 @@ I left.
 
 *Parlerò.*
 I will speak. 
-
-
 
 
